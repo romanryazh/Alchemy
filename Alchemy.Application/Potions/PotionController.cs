@@ -13,8 +13,8 @@ public class PotionController(IMediator mediator) : ControllerBase
     [HttpPost]
     public async Task<ActionResult<Guid>> Create([FromBody] CreatePotionCommand command, CancellationToken ct)
     {
-        var potionDto = await mediator.Send(command, ct);
-        return Ok(potionDto);
+        var potionId = await mediator.Send(command, ct);
+        return Ok(potionId);
     }
 
     [HttpGet("{id:guid}")]

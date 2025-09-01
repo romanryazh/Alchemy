@@ -1,6 +1,6 @@
+using Alchemy.Application.Locations.DTOs;
+using MediatR;
+
 namespace Alchemy.Application.Locations.Queries.GetLocation;
 
-public class GetLocationByIdQuery
-{
-    
-}
+public record GetLocationByIdQuery(Guid Id) : IRequest<LocationDto>;

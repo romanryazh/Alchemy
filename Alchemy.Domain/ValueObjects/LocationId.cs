@@ -7,12 +7,14 @@ public class LocationId
     public LocationId(Guid value)
     {
         if (value == Guid.Empty)
+        {
             throw new ArgumentException("Effect Id не может быть пустым", nameof(value));
+        }
         
         Value = value;
     }
 
-    public static LocationId Create()
+    public static LocationId New()
     {
         return new LocationId(Guid.CreateVersion7());
     }

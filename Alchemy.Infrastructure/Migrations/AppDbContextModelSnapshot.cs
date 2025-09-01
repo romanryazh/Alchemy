@@ -40,6 +40,24 @@ namespace Alchemy.Infrastructure.Migrations
                     b.ToTable("Effects");
                 });
 
+            modelBuilder.Entity("Alchemy.Domain.Entities.Location", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .HasColumnType("uuid");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("text");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Locations");
+                });
+
             modelBuilder.Entity("Alchemy.Domain.Entities.Potion", b =>
                 {
                     b.Property<Guid>("Id")

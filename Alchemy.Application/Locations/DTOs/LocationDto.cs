@@ -1,6 +1,3 @@
 namespace Alchemy.Application.Locations.DTOs;
 
-public class LocationDto
-{
-    
-}
+public record LocationDto(Guid Id, string Name, string Description);
