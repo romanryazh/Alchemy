@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alchemy.WebApi", "Alchemy.WebApi\Alchemy.WebApi.csproj", "{9FF870DA-A471-468F-881B-8150A77BD979}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alchemy.Domain", "Alchemy.Domain\Alchemy.Domain.csproj", "{CFED4D7A-3BCC-4756-A687-05EDC3C31AE5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alchemy.Application", "Alchemy.Application\Alchemy.Application.csproj", "{8D2D0369-9F3E-4255-8C2D-A217C286FE58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alchemy.Infrastructure", "Alchemy.Infrastructure\Alchemy.Infrastructure.csproj", "{B42459CB-76A9-48A7-9991-32C5D92B94AF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9FF870DA-A471-468F-881B-8150A77BD979}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9FF870DA-A471-468F-881B-8150A77BD979}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9FF870DA-A471-468F-881B-8150A77BD979}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9FF870DA-A471-468F-881B-8150A77BD979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFED4D7A-3BCC-4756-A687-05EDC3C31AE5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFED4D7A-3BCC-4756-A687-05EDC3C31AE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFED4D7A-3BCC-4756-A687-05EDC3C31AE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFED4D7A-3BCC-4756-A687-05EDC3C31AE5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8D2D0369-9F3E-4255-8C2D-A217C286FE58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8D2D0369-9F3E-4255-8C2D-A217C286FE58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8D2D0369-9F3E-4255-8C2D-A217C286FE58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8D2D0369-9F3E-4255-8C2D-A217C286FE58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B42459CB-76A9-48A7-9991-32C5D92B94AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B42459CB-76A9-48A7-9991-32C5D92B94AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B42459CB-76A9-48A7-9991-32C5D92B94AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B42459CB-76A9-48A7-9991-32C5D92B94AF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal

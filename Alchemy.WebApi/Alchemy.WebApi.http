@@ -1,0 +1,7 @@
+@Address = http://localhost
+@Port = 5281
+
+GET {{Address}}:{{Port}}/
+Accept: application/json
+
+###
