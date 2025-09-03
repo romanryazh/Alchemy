@@ -15,6 +15,10 @@ public class Effect : EntityBase
     
     public IReadOnlyCollection<Potion> Potions => _potions.AsReadOnly();
     
+    private List<Component> _components;
+    
+    public IReadOnlyCollection<Component> Components => _components.AsReadOnly();
+    
     private Effect() {}
 
     private Effect(string name, string description)
@@ -23,6 +27,7 @@ public class Effect : EntityBase
         Name = name;
         Description = description;
         _potions = new List<Potion>();
+        _components = new List<Component>();
     }
 
     public void Update(string name, string description)

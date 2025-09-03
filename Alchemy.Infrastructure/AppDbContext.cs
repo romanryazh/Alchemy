@@ -12,12 +12,15 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<Potion> Potions => Set<Potion>();
     
     public DbSet<Location> Locations => Set<Location>();
+    
+    public DbSet<Component> Components => Set<Component>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.ApplyConfiguration(new EffectConfiguration());
         modelBuilder.ApplyConfiguration(new PotionConfiguration());
         modelBuilder.ApplyConfiguration(new LocationConfiguration());
+        modelBuilder.ApplyConfiguration(new ComponentConfiguration());
         
         base.OnModelCreating(modelBuilder);
     }

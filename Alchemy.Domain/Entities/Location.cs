@@ -9,6 +9,10 @@ public class Location : EntityBase
     
     public string Description { get; private set; }
     
+    private List<Component> _components;
+    
+    public IReadOnlyCollection<Component> Components => _components.AsReadOnly();
+    
     private Location() {}
 
     private Location(string name, string description)
@@ -19,6 +23,7 @@ public class Location : EntityBase
         Id = LocationId.New();
         Name = name;
         Description = description;
+        _components = new List<Component>();
     }
 
     public static Location Create(string name, string description)
