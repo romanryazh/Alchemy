@@ -18,43 +18,49 @@ public class ExceptionHandlingMiddleware : IExceptionHandler
                 "Ошибка валидации",
                 "Произошла одна или несколько ошибок валидации",
                 validationException.Errors),
-            
+
             NotFoundException => (
                 StatusCodes.Status404NotFound,
                 "Не найдено",
                 exception.Message,
                 null),
-            
+
             ConflictException => (
                 StatusCodes.Status409Conflict,
                 "Конфликт",
                 exception.Message,
                 null),
-            
+
+            ArgumentException => (
+                StatusCodes.Status400BadRequest,
+                "Ошибка аргумента",
+                exception.Message,
+                null),
+
             DomainException => (
                 StatusCodes.Status400BadRequest,
                 "Нарушение бизнес правил",
                 exception.Message,
                 null),
-            
+
             _ => (
-                StatusCodes.Status500InternalServerError, 
-                "Внутренняя ошибка сервера", 
+                StatusCodes.Status500InternalServerError,
+                "Внутренняя ошибка сервера",
                 "Произошла непредвиденная ошибка",
                 null),
         };
-        
+
         httpContext.Response.ContentType = "application/json";
         httpContext.Response.StatusCode = statusCode;
 
-        await httpContext.Response.WriteAsJsonAsync(new 
+        await httpContext.Response.WriteAsJsonAsync(new
         {
             Status = statusCode,
             Title = title,
             Detail = detail,
             Errors = errors
         }, ct);
-        
+
         return true;
     }
 }

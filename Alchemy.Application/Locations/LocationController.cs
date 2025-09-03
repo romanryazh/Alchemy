@@ -16,7 +16,7 @@ public class LocationController(IMediator mediator) : ControllerBase
     /// </summary>
     /// <param name="command">Данные запроса</param>
     /// <param name="ct">Токен отмены <see cref="CancellationToken"/></param>
-    /// <returns></returns>
+    /// <returns>Уникальный идентификатор</returns>
     [HttpPost]
     public async Task<ActionResult<Guid>> Create([FromBody] CreateLocationCommand command, CancellationToken ct)
     {
@@ -24,6 +24,12 @@ public class LocationController(IMediator mediator) : ControllerBase
         return Ok(locationId);
     }
 
+    /// <summary>
+    /// Получить локацию по Id
+    /// </summary>
+    /// <param name="id">Уникальный идентификатор</param>
+    /// <param name="ct">Токен отмены <see cref="CancellationToken"/></param>
+    /// <returns>Данные о локации <see cref="LocationDto"/></returns>
     [HttpGet("{id:guid}")]
     public async Task<ActionResult<LocationDto>> GetById(Guid id, CancellationToken ct)
     {

@@ -13,6 +13,9 @@ public class Location : EntityBase
 
     private Location(string name, string description)
     {
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("Название не может быть пустым");
+        
         Id = LocationId.New();
         Name = name;
         Description = description;
@@ -20,6 +23,9 @@ public class Location : EntityBase
 
     public static Location Create(string name, string description)
     {
+        if (string.IsNullOrWhiteSpace(name))
+            throw new ArgumentException("Название не может быть пустым");
+        
         return new Location(name, description);
     }
 }

@@ -22,6 +22,8 @@ public static class DependencyInjection
             );
 
         // services.AddScoped<AppDbContext>(provider => provider.GetRequiredService<AppDbContext>());
+
+        services.AddScoped<IUnitOfWork, UnitOfWork>();
         
         services.AddScoped<IEffectRepository, EffectRepository>();
         services.AddScoped<IPotionRepository, PotionRepository>();

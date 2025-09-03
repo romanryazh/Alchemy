@@ -10,7 +10,6 @@ public class LocationRepository(AppDbContext context) : ILocationRepository
     public async Task AddAsync(Location location, CancellationToken ct)
     {
         await context.Locations.AddAsync(location, ct);
-        await context.SaveChangesAsync(ct);
     }
 
     public Task UpdateAsync(Location location, CancellationToken ct)
@@ -21,7 +20,6 @@ public class LocationRepository(AppDbContext context) : ILocationRepository
     public async Task DeleteAsync(Location location, CancellationToken ct)
     {
         context.Locations.Remove(location);
-        await context.SaveChangesAsync(ct);
     }
 
     public async Task<Location?> GetByIdAsync(Guid id, CancellationToken ct)
