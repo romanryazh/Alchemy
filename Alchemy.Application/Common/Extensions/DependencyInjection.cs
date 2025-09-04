@@ -1,3 +1,4 @@
+using Alchemy.Application.CraftSteps.DTOs;
 using FluentValidation;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -14,6 +15,8 @@ public static class DependencyInjection
             options.RegisterServicesFromAssembly(ApplicationAssemblyReference.Assembly);
             options.Lifetime = ServiceLifetime.Scoped;
         });
+
+        services.AddAutoMapper(cfg => { }, ApplicationAssemblyReference.Assembly);
         
         return services;
     }
