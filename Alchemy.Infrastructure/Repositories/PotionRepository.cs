@@ -28,7 +28,6 @@ public class PotionRepository(AppDbContext context) : IPotionRepository
         var potionId = new PotionId(id);
         return await context.Potions
             .Include(p => p.Effects)
-            .AsNoTracking()
             .FirstOrDefaultAsync(e => e.Id == potionId, ct);
     }
 

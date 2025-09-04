@@ -1,22 +1,22 @@
 namespace Alchemy.Domain.ValueObjects;
 
-public record LocationId
+public record CraftStepId
 {
     public Guid Value { get; }
 
-    public LocationId(Guid value)
+    public CraftStepId(Guid value)
     {
         if (value == Guid.Empty)
         {
-            throw new ArgumentException("Effect Id не может быть пустым", nameof(value));
+            throw new ArgumentException("CraftStep Id не может быть пустым", nameof(value));
         }
         
         Value = value;
     }
 
-    public static LocationId New()
+    public static CraftStepId New()
     {
-        return new LocationId(Guid.CreateVersion7());
+        return new CraftStepId(Guid.CreateVersion7());
     }
     
     public override string ToString()

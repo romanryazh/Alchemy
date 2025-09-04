@@ -28,7 +28,6 @@ public class ComponentRepository(AppDbContext context) : IComponentRepository
         return await context.Components
             .Include(c => c.Effects)
             .Include(c => c.Locations)
-            .AsNoTracking()
             .FirstOrDefaultAsync(c => c.Id == componentId, ct); 
     }
 

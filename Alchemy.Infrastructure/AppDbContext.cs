@@ -14,6 +14,8 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
     public DbSet<Location> Locations => Set<Location>();
     
     public DbSet<Component> Components => Set<Component>();
+    
+    public DbSet<CraftStep> CraftSteps => Set<CraftStep>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -21,6 +23,7 @@ public class AppDbContext(DbContextOptions<AppDbContext> options) : DbContext(op
         modelBuilder.ApplyConfiguration(new PotionConfiguration());
         modelBuilder.ApplyConfiguration(new LocationConfiguration());
         modelBuilder.ApplyConfiguration(new ComponentConfiguration());
+        modelBuilder.ApplyConfiguration(new CraftStepConfiguration());
         
         base.OnModelCreating(modelBuilder);
     }

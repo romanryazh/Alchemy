@@ -29,6 +29,7 @@ public static class DependencyInjection
         services.AddScoped<IPotionRepository, PotionRepository>();
         services.AddScoped<ILocationRepository, LocationRepository>();
         services.AddScoped<IComponentRepository, ComponentRepository>();
+        services.AddScoped<ICraftStepRepository, CraftStepRepository>();
         
         services.AddScoped<IUniqueCheckerService, UniqueCheckerService>();
         

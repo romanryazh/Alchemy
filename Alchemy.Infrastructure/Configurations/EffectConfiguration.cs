@@ -18,10 +18,8 @@ public class EffectConfiguration : IEntityTypeConfiguration<Effect>
                 vo => vo.Value,
                 v => new EffectId(v));
         
-        builder.Property(e => e.Name)
-            .IsRequired();
+        builder.Property(e => e.Name).IsRequired();
         
-        builder.Property(e => e.Description)
-            .IsRequired();
+        builder.Property(e => e.Description).IsRequired();
     }
 }

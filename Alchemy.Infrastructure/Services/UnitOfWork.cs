@@ -9,6 +9,7 @@ public class UnitOfWork(AppDbContext context, IServiceProvider serviceProvider) 
     private IPotionRepository _potionRepository;
     private ILocationRepository _locationRepository;
     private IComponentRepository _componentRepository;
+    private ICraftStepRepository _craftStepRepository;
 
     public IEffectRepository EffectRepository => _effectRepository ??=
         serviceProvider.GetRequiredService<IEffectRepository>();
@@ -20,7 +21,10 @@ public class UnitOfWork(AppDbContext context, IServiceProvider serviceProvider) 
         serviceProvider.GetRequiredService<ILocationRepository>();
 
     public IComponentRepository ComponentRepository => _componentRepository ??=
-        serviceProvider.GetRequiredService<IComponentRepository>();
+        serviceProvider.GetRequiredService<IComponentRepository>();    
+    
+    public ICraftStepRepository CraftStepRepository => _craftStepRepository ??=
+        serviceProvider.GetRequiredService<ICraftStepRepository>();
 
     public async Task<int> SaveChangesAsync(CancellationToken ct = default)
     {

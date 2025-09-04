@@ -10,6 +10,8 @@ public interface IUnitOfWork : IDisposable
     ILocationRepository LocationRepository { get; }
     
     IComponentRepository ComponentRepository { get; }
+  
+    ICraftStepRepository CraftStepRepository { get; }
     
     public Task<int> SaveChangesAsync(CancellationToken ct = default);
     
